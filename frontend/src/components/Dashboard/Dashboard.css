@@ -1,0 +1,37 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.dashboard .sidebar {
+  flex: 0 0 60px;
+  transition: all 0.3s ease;
+}
+
+.dashboard .sidebar.extended {
+  flex: 0 0 250px;
+}
+
+.dashboard .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 60px);
+  transition: all 0.3s ease;
+}
+
+.dashboard .sidebar.extended + .main {
+  width: calc(100% - 250px);
+}
+
+@media (max-width: 600px) {
+  .dashboard .sidebar {
+    display: none;
+  }
+  
+  .dashboard .main {
+    width: 100%;
+  }
+}
